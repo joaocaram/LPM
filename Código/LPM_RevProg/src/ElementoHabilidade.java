@@ -1,0 +1,53 @@
+
+/** 
+ * MIT License
+ *
+ * Copyright(c) 2020 João Caram <caram@pucminas.br>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+ /**
+  * Classe elemento para estruturas dinâmicas (sem POO)
+  */
+public class ElementoHabilidade {
+    public Habilidade meuDado;      //elemento guarda uma pessoa
+    public ElementoHabilidade proximo;    //elemento aponta para o próximo elemento
+
+    /**
+     * Construtor para o elemento
+     * @param quem Pessoa a ser armazenada.
+     */
+    public ElementoHabilidade(Habilidade quem){
+        meuDado = quem;
+        proximo = null;
+    }
+
+    /**
+     * Método para comparar uma pessoa pelo nome
+     * @param obj String com o nome da pessoa a ser comparada.
+     */
+    @Override
+    public boolean equals(Object obj){
+        
+        Habilidade comparacao = (Habilidade)obj;    //conversão genérica em String
+        return meuDado.equals(comparacao);  //direciona a comparação para a classe de dados
+
+    }
+}
