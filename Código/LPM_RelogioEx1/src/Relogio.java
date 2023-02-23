@@ -90,10 +90,29 @@ public class Relogio {
 	 * @return Uma string no formato HH:MM:SS.
 	 */
 	public String horaFormatada(){
-        String aux = String.format("%02d", this.hora)+":";
-        aux += String.format("%02d", this.minuto)+":";
-        aux += String.format("%02d", this.segundo);
-        return aux;
+        return formatoDaHora(hora, minuto, segundo);
     }
+	
+	public String horaFormatadaAMPM(){
+		String sufixo=" AM";
+		int horaAuxiliar = this.hora;
+		if(this.hora > 11){
+			sufixo = " PM";
+			horaAuxiliar -= 12;
+		}
+		if(horaAuxiliar==0)
+				horaAuxiliar = 12;
+		return formatoDaHora(horaAuxiliar, minuto, segundo)+sufixo;
+	}
+
+	private String formatoDaHora(int hora, int min, int seg){
+		String aux = String.format("%02d", hora)+":";
+        aux += String.format("%02d", min)+":";
+        aux += String.format("%02d",seg);
+        return aux;
+	}
+
+
+
 	//#endregion
 }

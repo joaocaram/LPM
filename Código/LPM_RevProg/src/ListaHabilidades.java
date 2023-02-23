@@ -36,7 +36,7 @@ public class ListaHabilidades {
         primeiro = new ElementoHabilidade(null);
         ultimo = primeiro;
     }
-
+ 
     /**
      * Insere uma pessoa no fim da lista
      * @param qual A pessoa a ser inserida
