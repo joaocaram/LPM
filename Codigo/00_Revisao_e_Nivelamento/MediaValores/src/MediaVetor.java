@@ -1,34 +1,47 @@
 import java.util.Scanner;
 
 public class MediaVetor {
-    public static void main(String[] args) throws Exception {
-        Scanner teclado;
-        double[] vetor;
-        int tamanhoVetor;
-        double soma;
-        double media;
 
-        teclado = new Scanner(System.in);
+    public static double[] criarVetor(Scanner teclado){
+        int tamanhoVetor;
+
         System.out.print("Qual o tamanho do vetor a ser lido? ");
         
         tamanhoVetor = Integer.parseInt(teclado.nextLine());
-        vetor = new double[tamanhoVetor];
-        System.out.println();
+        return new double[tamanhoVetor];
+    }
 
-        for (int i = 0; i < tamanhoVetor; i++){
+    public static void lerVetor(double[] vetor, Scanner teclado){
+        for (int i = 0; i < vetor.length; i++){
             System.out.print("Digite o valor " + (i + 1) + ": ");
             vetor[i] = Double.parseDouble(teclado.nextLine());
         }
+        
+    }
 
-        soma = 0;
-
-        for (int i = 0; i < tamanhoVetor; i++) {
+    public static double somarVetor(double[] vetor){
+        double soma = 0d;
+        for (int i = 0; i < vetor.length; i++) {
             soma += vetor[i];
         }
+        return soma;
+    }
 
-        media = soma / tamanhoVetor;
-        System.out.println("O vetor tem "+tamanhoVetor+" elementos. A soma dos elementos é "+soma);
-        System.out.println("A média dos valores do vetor é de " + String.format("%.2f", media));
+    public static double mediaValores(double[] vetor){
+        return somarVetor(vetor) / vetor.length;
+    }
+
+
+    public static void main(String[] args) throws Exception {
+        Scanner teclado;
+        double[] vetor;
+
+        teclado = new Scanner(System.in);
+        vetor = criarVetor(teclado);
+        System.out.println();
+        lerVetor(vetor, teclado);
+        System.out.println("O vetor tem "+vetor.length+" elementos. A soma dos elementos é "+somarVetor(vetor));
+        System.out.println("A média dos valores do vetor é de " + String.format("%.2f",  mediaValores(vetor)));
         
         teclado.close();
     }
