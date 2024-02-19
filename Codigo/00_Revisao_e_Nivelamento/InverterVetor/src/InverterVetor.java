@@ -72,6 +72,8 @@ public class InverterVetor{
       System.out.print(vetor[i]+" ");
   }
   
+  
+
   public static void main(String[] args) throws Exception {   //atenção para modularidade e 'código limpo'
     final int TAMANHO;
     int[]  inteiros;
