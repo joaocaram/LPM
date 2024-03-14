@@ -1,6 +1,4 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class HoraTest {
@@ -19,8 +17,8 @@ public class HoraTest {
 
     @Test
     public void formataCorretamenteHoraCom1Digito(){
-        Hora hora1 = new Hora(8, 5, 0);
-        assertEquals("08:05:00", hora1.horaFormatada());
+        Hora hora1 = new Hora(9, 59, 59);
+        assertEquals("09:59:59", hora1.horaFormatada());
     }
     
 }

@@ -130,7 +130,9 @@ public class Hora {
      * @return Uma string no formato HH:MM:SS
      */
     public String horaFormatada(){
-        return hora+":"+minuto+":"+segundo;
+        return String.format("%02d:%02d:%02d", 
+                    hora, minuto, segundo); 
+        
     }
     //#endregion
 }
